@@ -1,0 +1,138 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* NAVBAR KATEGORI */
+.category-nav {
+    background: #ffffff;
+    padding: 12px 30px;
+    border-bottom: 1px solid #d1d5db;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* MENU UTAMA */
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-menu > li {
+    position: relative;
+}
+
+.main-menu > li > a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+/* Hover main menu */
+.main-menu > li > a:hover,
+.main-menu > li > a.active {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    color: white;
+    box-shadow: 0 6px 15px rgba(59,130,246,0.3);
+    transform: translateY(-2px);
+}
+
+/* DROPDOWN SUBMENU */
+.dropdown .submenu {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 10px 0;
+    list-style: none;
+    width: 250px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+}
+
+/* Tampilkan dropdown saat hover */
+.dropdown:hover .submenu {
+    display: block;
+    animation: fadeDown 0.3s ease forwards;
+}
+
+/* ITEM SUBMENU */
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+/* Hover submenu */
+.submenu li a:hover {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+}
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-menu > li {
+        width: 100%;
+    }
+
+    .dropdown .submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-left: none;
+    }
+}
+
+/* ANIMASI FADE */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTENT AREA */
+.content {
+    padding: 30px;
+}
+
+.hero {
+  height: 100vh; /* penuh 1 layar (viewport height) */
+  background-image: url(cm.webp); /* ganti dengan nama file gambarmu */
+  background-size: cover; /* agar fit ke layar */
+  background-position: center; /* biar posisinya di tengah */
+  background-repeat: no-repeat; /* supaya tidak berulang */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 64, 64); /* teks jadi putih agar terlihat */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.671); /* agar teks lebih jelas di atas gambar */
+  padding-top: 80px; /* agar tidak tertutup navbar */
+}

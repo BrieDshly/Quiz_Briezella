@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigasi Akun</title>
+    <link rel="stylesheet" href="css akun.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="account-nav">
+        <div class="logo">TOKOCM</div>
+
+        <ul class="nav-menu">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Kategori</a></li>
+            <li><a href="#">Promo</a></li>
+        </ul>
+
+        <!-- ACCOUNT DROPDOWN -->
+        <div class="account-wrapper">
+            <button class="account-btn" onclick="toggleAccount()">
+                👤 Akun
+            </button>
+
+            <div class="account-dropdown" id="accountDropdown">
+                <a href="#">Profil</a>
+                <a href="#">Pesanan Saya</a>
+                <a href="#">Wishlist</a>
+                <hr>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <section class="hero">
+    <h1>Klik ikon akun untuk melihat akun</h1>
+  </section>
+
+    <script>
+        function toggleAccount() {
+            document.getElementById("accountDropdown").classList.toggle("show");
+        }
+
+        // Menutup dropdown jika klik di luar
+        window.onclick = function(event) {
+            if (!event.target.closest('.account-wrapper')) {
+                document.getElementById("accountDropdown").classList.remove("show");
+            }
+        }
+    </script>
+
+</body>
+</html>
